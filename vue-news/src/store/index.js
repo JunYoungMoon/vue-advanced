@@ -9,6 +9,7 @@ export default new Vuex.Store({
   state: {
     jobs: [],
 	users: [],
+	ask: [],
   },
   mutations,
   actions, 

@@ -9,5 +9,8 @@ export default{
 	},
 	FETCH_NEWS({ commit}) {
 		return fetchNewsList().then(response => commit('SET_NEWS', response.data));
+	},
+	FETCH_ASK({ commit}) {
+		return fetchAskList().then(response => commit('SET_ASK', response.data));
 	}
 }
