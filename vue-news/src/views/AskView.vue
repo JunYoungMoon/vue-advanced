@@ -1,8 +1,9 @@
 <template>
 	<div>
-		<div v-for="item in $store.state.ask" v-bind:key="item.id">
-			{{item.title}}
-		</div>
+    	<p v-for="ask in this.$store.state.ask" :key="ask.id">
+    		<a :href="ask.url">{{ ask.title }}</a><br>
+    		<small>{{ ask.time_ago }} by {{ ask.user }}</small>
+		</p>
 	</div>
 </template>
 
