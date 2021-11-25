@@ -24,9 +24,12 @@
 
 					<small class="link-text">
 						{{ item.time_ago }} by  
+                        
 						<router-link 
-                        v-if="item.user"
-                        :to="`/user/${item.user}`">{{ item.user }}</router-link>
+                            v-if="item.user"
+                            :to="`/user/${item.user}`">
+                            {{ item.user }}
+                        </router-link>
                         <a :href="item.url" v-else>
                             {{item.domain}}
                         </a>

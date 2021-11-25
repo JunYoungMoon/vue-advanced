@@ -1,22 +1,31 @@
 <template>
   <div>
-    <p>id : {{ fetchedUser.id }}</p>
+    <user-profile :info="userInfo"></user-profile>
+    <!-- <p>id : {{ fetchedUser.id }}</p>
     <p>karma : {{ fetchedUser.karma }}</p>
-    <p>joined : {{ fetchedUser.created }}</p>
+    <p>joined : {{ fetchedUser.created }}</p> -->
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import UserProfile from '../components/UserProfile.vue'
 
 export default {
+  components:{
+    UserProfile
+  },
   created() {
     const userId = this.$route.params.id;
     this.$store.dispatch('FETCH_USER', userId);
   },
-  computed: {
-    ...mapGetters(['fetchedUser']),
+  computed:{
+    userInfo(){
+        return this.$store.state.user;
+    }
   },
+  // computed: {
+  //   ...mapGetters(['fetchedUser']),
+  // },
 
 }
 </script>
