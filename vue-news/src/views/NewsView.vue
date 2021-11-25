@@ -1,13 +1,23 @@
 <template>
 	<div>
-		<p v-for="news in this.$store.state.news" :key="news.id">
-			<a :href="news.url">{{ news.title }}</a><br>
-			<small>
-			{{ news.time_ago }} 
-			by 
-			<router-link :to="'/user/' + news.user">{{ news.user }}</router-link>
-		</small>
-		</p>
+		<ul class="news-list">
+			<li v-for="news in this.$store.state.news" :key="news.id" class="post">
+				<!-- 포인트 영역 -->
+				<div class="points">
+					{{ news.points }}
+				</div>	
+				<!-- 기타 정보 영역 -->
+				<div>
+					<p class="news-title">
+						<a :href="news.url">{{ news.title }}</a>
+					</p>
+					<small class="link-text">
+						{{ news.time_ago }} by  
+						<router-link :to="`/user/${news.user}`">{{ news.user }}</router-link>
+					</small>
+				</div>
+			</li>
+		</ul>
 	</div>
 </template>
 
@@ -38,6 +48,29 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.news-list {
+  padding: 0;
+  margin: 0;
+}
+.post {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+.points {
+  width: 80px;
+  height: 60px;
+  color: #42b883;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.news-title {
+  margin: 0;
+}
+.link-text {
+  color: #828282;
+}
 </style>
