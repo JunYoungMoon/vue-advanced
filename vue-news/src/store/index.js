@@ -7,14 +7,14 @@ import getters from './getters.js';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-    jobs: [],
-    news: [],
-    ask: [],
-    user: {},
-    item: {}
-  },
-  getters,
-  mutations,
-  actions, 
+    state: {
+        jobs: [],
+        news: [],
+        ask: [],
+        user: {},
+        item: {}
+    },
+    getters,
+    mutations,
+    actions,
 })

@@ -9,34 +9,34 @@ import UserView from '../views/UserView.vue';
 Vue.use(VueRouter);
 
 export default new VueRouter({
-	mode: 'history',
-	routes:[
-		{
-			path:'/',
-			redirect:'/news'
-		},
-		{
-			path:'/news',
-			name:'news',
-			component:NewsView
-		},
-		{
-			path:'/ask',
-			name:'ask',
-			component:AskView
-		},
-		{
-			path:'/jobs',
-			name:'jobs',
-			component:JobsView
-		},
-		{
-			path: '/item/:id',
-			component: ItemView,
-		},
-		{
-			path: '/user/:id',
-			component: UserView,
-		}
-	]
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            redirect: '/news'
+        },
+        {
+            path: '/news',
+            name: 'news',
+            component: NewsView
+        },
+        {
+            path: '/ask',
+            name: 'ask',
+            component: AskView
+        },
+        {
+            path: '/jobs',
+            name: 'jobs',
+            component: JobsView
+        },
+        {
+            path: '/item/:id',
+            component: ItemView,
+        },
+        {
+            path: '/user/:id',
+            component: UserView,
+        }
+    ]
 });

@@ -1,8 +1,8 @@
 <template>
   <div>
     <user-profile :info="userInfo">
-      <div slot="username">{{ userInfo.id}}</div>
-      <span slot="time">{{ 'Joined ' + userInfo.created}}, </span>
+      <div slot="username">{{ userInfo.id }}</div>
+      <span slot="time">{{ 'Joined ' + userInfo.created }}, </span>
       <span slot="karma">{{ userInfo.karma }}</span>
     </user-profile>
   </div>
@@ -12,16 +12,16 @@
 import UserProfile from '../components/UserProfile.vue'
 
 export default {
-  components:{
+  components: {
     UserProfile
   },
   created() {
     const userId = this.$route.params.id;
     this.$store.dispatch('FETCH_USER', userId);
   },
-  computed:{
-    userInfo(){
-        return this.$store.state.user;
+  computed: {
+    userInfo() {
+      return this.$store.state.user;
     }
   }
 }

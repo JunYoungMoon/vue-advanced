@@ -1,81 +1,81 @@
 <template>
-    <div>
-        <ul class="news-list">
-			<li v-for="item in listItems" :key="item.id" class="post">
-				<!-- 포인트 영역 -->
-				<div class="points">
-					{{ item.points || 0}}
-				</div>	
-				<!-- 기타 정보 영역 -->
-				<div>
-                    <!-- 타이틀 영역 -->                    
-                    <p class="news-title">
-                        <template v-if="item.domain">
-                        <a :href="item.url">
-                            {{ item.title }}
-                        </a>
-                        </template>
-                        <template v-else>
-                            <router-link :to="`item/${item.id}`">
-                                {{ item.title }}
-                            </router-link>
-                        </template>
-                    </p>
+  <div>
+    <ul class="news-list">
+      <li v-for="item in listItems" :key="item.id" class="post">
+        <!-- 포인트 영역 -->
+        <div class="points">
+          {{ item.points || 0 }}
+        </div>
+        <!-- 기타 정보 영역 -->
+        <div>
+          <!-- 타이틀 영역 -->
+          <p class="news-title">
+            <template v-if="item.domain">
+              <a :href="item.url">
+                {{ item.title }}
+              </a>
+            </template>
+            <template v-else>
+              <router-link :to="`item/${item.id}`">
+                {{ item.title }}
+              </router-link>
+            </template>
+          </p>
 
-					<small class="link-text">
-						{{ item.time_ago }} by  
-                        
-						<router-link 
-                            v-if="item.user"
-                            :to="`/user/${item.user}`">
-                            {{ item.user }}
-                        </router-link>
-                        <a :href="item.url" v-else>
-                            {{item.domain}}
-                        </a>
-					</small>
-				</div>
-			</li>
-		</ul>
-    </div>  
+          <small class="link-text">
+            {{ item.time_ago }} by
+
+            <router-link
+                v-if="item.user"
+                :to="`/user/${item.user}`">
+              {{ item.user }}
+            </router-link>
+            <a :href="item.url" v-else>
+              {{ item.domain }}
+            </a>
+          </small>
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
 export default {
-	created(){
-        const name = this.$route.name;
+  created() {
+    const name = this.$route.name;
 
-        if(name === 'news'){
-            this.$store.dispatch('FETCH_NEWS')
-                .then(() => console.log('success'))
-                .catch(() => console.log('fail'));
-        }else if(name === 'ask'){
-            this.$store.dispatch('FETCH_ASK')
-			    .then(() => console.log('success'))
-		    	.catch(() => console.log('fail'));
-        }else if(name === 'jobs'){
-            this.$store.dispatch('FETCH_JOBS')
-                .then(() => console.log('success'))
-                .catch(() => console.log('fail'));
-        }
-	},
-    computed:{
-        listItems(){
-            const name = this.$route.name;
-
-            console.log(name);
-            
-            if(name === 'news'){
-                return this.$store.state.news;                
-            }else if(name === 'ask'){
-                return this.$store.state.ask;
-            }else if(name === 'jobs'){
-                return this.$store.state.jobs;
-            }
-
-            return this.$store.state.news;           
-        }
+    if (name === 'news') {
+      this.$store.dispatch('FETCH_NEWS')
+          .then(() => console.log('success'))
+          .catch(() => console.log('fail'));
+    } else if (name === 'ask') {
+      this.$store.dispatch('FETCH_ASK')
+          .then(() => console.log('success'))
+          .catch(() => console.log('fail'));
+    } else if (name === 'jobs') {
+      this.$store.dispatch('FETCH_JOBS')
+          .then(() => console.log('success'))
+          .catch(() => console.log('fail'));
     }
+  },
+  computed: {
+    listItems() {
+      const name = this.$route.name;
+
+      console.log(name);
+
+      if (name === 'news') {
+        return this.$store.state.news;
+      } else if (name === 'ask') {
+        return this.$store.state.ask;
+      } else if (name === 'jobs') {
+        return this.$store.state.jobs;
+      }
+
+      return this.$store.state.news;
+    }
+  }
 }
 </script>
 
@@ -84,12 +84,14 @@ export default {
   padding: 0;
   margin: 0;
 }
+
 .post {
   list-style: none;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #eee;
 }
+
 .points {
   width: 80px;
   height: 60px;
@@ -98,9 +100,11 @@ export default {
   align-items: center;
   justify-content: center;
 }
+
 .news-title {
   margin: 0;
 }
+
 .link-text {
   color: #828282;
 }
