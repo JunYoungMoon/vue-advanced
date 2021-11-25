@@ -1,6 +1,6 @@
 <template>
   <div>
-    <user-profile></user-profile>
+    <user-profile :info="userInfo"></user-profile>
     <!-- <p>id : {{ fetchedUser.id }}</p>
     <p>karma : {{ fetchedUser.karma }}</p>
     <p>joined : {{ fetchedUser.created }}</p> -->
@@ -17,6 +17,11 @@ export default {
   created() {
     const userId = this.$route.params.id;
     this.$store.dispatch('FETCH_USER', userId);
+  },
+  computed:{
+    userInfo(){
+        return this.$store.state.user;
+    }
   },
   // computed: {
   //   ...mapGetters(['fetchedUser']),
