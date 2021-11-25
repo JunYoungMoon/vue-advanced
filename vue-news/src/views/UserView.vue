@@ -1,9 +1,10 @@
 <template>
   <div>
-    <user-profile :info="userInfo"></user-profile>
-    <!-- <p>id : {{ fetchedUser.id }}</p>
-    <p>karma : {{ fetchedUser.karma }}</p>
-    <p>joined : {{ fetchedUser.created }}</p> -->
+    <user-profile :info="userInfo">
+      <div slot="username">{{ userInfo.id}}</div>
+      <span slot="time">{{ 'Joined ' + userInfo.created}}, </span>
+      <span slot="karma">{{ userInfo.karma }}</span>
+    </user-profile>
   </div>
 </template>
 
@@ -22,11 +23,7 @@ export default {
     userInfo(){
         return this.$store.state.user;
     }
-  },
-  // computed: {
-  //   ...mapGetters(['fetchedUser']),
-  // },
-
+  }
 }
 </script>
 
