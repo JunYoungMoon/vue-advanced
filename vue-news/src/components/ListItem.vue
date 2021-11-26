@@ -41,10 +41,9 @@
 </template>
 
 <script>
-import {bus} from '../utils/bus.js';
 
 export default {
-  created() {
+/*  created() {
     const name = this.$route.name;
 
     bus.$emit('start:spinner');
@@ -71,20 +70,22 @@ export default {
           })
           .catch(() => console.log('fail'));
     }
-  },
+  },*/
   computed: {
     listItems() {
-      const name = this.$route.name;
 
-      if (name === 'news') {
-        return this.$store.state.news;
-      } else if (name === 'ask') {
-        return this.$store.state.ask;
-      } else if (name === 'jobs') {
-        return this.$store.state.jobs;
-      }
-
-      return this.$store.state.news;
+      return this.$store.state.list;
+      // const name = this.$route.name;
+      //
+      // if (name === 'news') {
+      //   return this.$store.state.news;
+      // } else if (name === 'ask') {
+      //   return this.$store.state.ask;
+      // } else if (name === 'jobs') {
+      //   return this.$store.state.jobs;
+      // }
+      //
+      // return this.$store.state.news;
     }
   }
 }
