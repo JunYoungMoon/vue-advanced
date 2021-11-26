@@ -41,29 +41,40 @@
 </template>
 
 <script>
+import {bus} from '../utils/bus.js';
+
 export default {
   created() {
     const name = this.$route.name;
 
+    bus.$emit('start:spinner');
+
     if (name === 'news') {
       this.$store.dispatch('FETCH_NEWS')
-          .then(() => console.log('success'))
+          .then(() => {
+            console.log('success');
+            bus.$emit('end:spinner');
+          })
           .catch(() => console.log('fail'));
     } else if (name === 'ask') {
       this.$store.dispatch('FETCH_ASK')
-          .then(() => console.log('success'))
+          .then(() => {
+            console.log('success');
+            bus.$emit('end:spinner');
+          })
           .catch(() => console.log('fail'));
     } else if (name === 'jobs') {
       this.$store.dispatch('FETCH_JOBS')
-          .then(() => console.log('success'))
+          .then(() => {
+            console.log('success');
+            bus.$emit('end:spinner');
+          })
           .catch(() => console.log('fail'));
     }
   },
   computed: {
     listItems() {
       const name = this.$route.name;
-
-      console.log(name);
 
       if (name === 'news') {
         return this.$store.state.news;
