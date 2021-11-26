@@ -3,7 +3,7 @@ import {
     fetchNewsList,
     fetchAskList,
     fetchUser,
-    fetchItem
+    fetchItem, fetchList
 } from '../api/index.js';
 
 export default {
@@ -16,10 +16,13 @@ export default {
     FETCH_ASK({commit}) {
         return fetchAskList().then(response => commit('SET_ASK', response.data));
     },
+    FETCH_LIST({commit}, pageName) {
+        return fetchList(pageName).then(response => commit('SET_LIST', response.data));
+    },
     FETCH_USER({commit}, userId) {
-        return fetchUser(userId).then(res => commit('SET_USER', res.data));
+        return fetchUser(userId).then(response => commit('SET_USER', response.data));
     },
     FETCH_ITEM({commit}, itemId) {
-        return fetchItem(itemId).then(res => commit('SET_ITEM', res.data));
+        return fetchItem(itemId).then(response => commit('SET_ITEM', response.data));
     },
 }

@@ -12,7 +12,8 @@ export default new Vuex.Store({
         news: [],
         ask: [],
         user: {},
-        item: {}
+        item: {},
+        list: [],
     },
     getters,
     mutations,
