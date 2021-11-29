@@ -16,8 +16,15 @@ export default {
     FETCH_ASK({commit}) {
         return fetchAskList().then(response => commit('SET_ASK', response.data));
     },
-    FETCH_LIST({commit}, pageName) {
-        return fetchList(pageName).then(response => commit('SET_LIST', response.data));
+    //promise
+    // FETCH_LIST({commit}, pageName) {
+    //     return fetchList(pageName).then(response => commit('SET_LIST', response.data));
+    // },
+    //async
+    async FETCH_LIST({commit}, pageName) {
+        const responese = await fetchList(pageName);
+        commit('SET_LIST',responese.data);
+        return responese;
     },
     FETCH_USER({commit}, userId) {
         return fetchUser(userId).then(response => commit('SET_USER', response.data));
