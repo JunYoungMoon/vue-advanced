@@ -12,3 +12,4 @@ Branch
 7. refactoring_2 (리팩토링 2 - 사용자 프로필 컴포넌트 공통화)
 8. refactoring_3 (리팩토링 3 - Mixin과 하이 오더 컴포넌트)
 9. refactoring_4 (리팩토링 4 - 데이터 호출과 UX)
+10. refactoring_5 (리팩토링 5 - async & await를 이용한 비동기 처리)
