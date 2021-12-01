@@ -1,4 +1,6 @@
-# [**컴포넌트 디자인 패턴**]
+# Vue.js 완벽 가이드
+
+Vue.js 완벽 가이드 인프런 강의 리포지토리입니다.
 
 Branch
 1. router (vue-router 설치 및 구현)
