@@ -1,9 +1,13 @@
-[기본 문법]
+[외부 라이브러리 모듈화 방법(차트)]
 
-```javascript
-async function fetchData() {
-    await getUserList();
-}
+#npm
+```
+npm install chart.js --save
+```
+
+#url
+```
+https://www.chartjs.org/
 ```
 
  
