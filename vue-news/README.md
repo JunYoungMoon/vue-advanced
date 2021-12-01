@@ -1,13 +1,10 @@
-[외부 라이브러리 모듈화 방법(차트)]
+# [서비스 배포 환경 구성]
 
-#npm
-```
-npm install chart.js --save
-```
+## 빌드로 배포
+````
+npm run build
+````
 
-#url
-```
-https://www.chartjs.org/
-```
+## Netlify 배포
 
- 
+[Netlify 공식 사이트 주소 링크](https://www.netlify.com/)
