@@ -11,7 +11,7 @@ import store from '../store/index.js';
 
 Vue.use(VueRouter);
 
-export const router = new VueRouter({
+export default new VueRouter({
     mode: 'history',
     routes: [
         {
