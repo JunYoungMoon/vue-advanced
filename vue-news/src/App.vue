@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <ToolBar></ToolBar>
+    <BarChart></BarChart>
     <transition name="fade">
       <router-view></router-view>
     </transition>
@@ -12,11 +13,13 @@
 import ToolBar from './components/ToolBar.vue';
 import Spinner from './components/Spinner.vue';
 import {bus} from './utils/bus.js';
+import BarChart from "./components/BarChart";
 
 export default {
   components: {
     ToolBar,
     Spinner,
+    BarChart
   },
   data() {
     return {
@@ -38,7 +41,7 @@ export default {
   beforeDestroy() {
     bus.$off('start:spinner', () => this.startSpinner());
     bus.$off('end:spinner', () => this.endSpinner());
-  }
+  },
 }
 </script>
 
