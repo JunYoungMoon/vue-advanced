@@ -13,3 +13,4 @@ Branch
 8. refactoring_3 (리팩토링 3 - Mixin과 하이 오더 컴포넌트)
 9. refactoring_4 (리팩토링 4 - 데이터 호출과 UX)
 10. refactoring_5 (리팩토링 5 - async & await를 이용한 비동기 처리)
+11. modulariztion (외부 라이브러리 모듈화 방법(차트))
