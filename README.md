@@ -1,6 +1,4 @@
-# Vue.js 완벽 가이드
-
-Vue.js 완벽 가이드 인프런 강의 리포지토리입니다.
+# [**컴포넌트 디자인 패턴**]
 
 Branch
 1. router (vue-router 설치 및 구현)
@@ -14,3 +12,4 @@ Branch
 9. refactoring_4 (리팩토링 4 - 데이터 호출과 UX)
 10. refactoring_5 (리팩토링 5 - async & await를 이용한 비동기 처리)
 11. modulariztion (외부 라이브러리 모듈화 방법(차트))
+12. design (컴포넌트 디자인 패턴)
