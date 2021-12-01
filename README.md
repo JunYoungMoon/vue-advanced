@@ -1,8 +1,12 @@
 # Vue.js 완벽 가이드
 
-Vue.js 완벽 가이드 인프런 강의 리포지토리입니다.
+## Vue.js 완벽 가이드 인프런 강의 리포지토리
 
-Branch
+###### (제공하는 소스코드는 제대로 동작 되지 않아 직접 코딩하면서 에러를 잡아냈습니다)
+
+
+
+### Branch
 1. router (vue-router 설치 및 구현)
 2. api (axios 설치 및 구현, 4가지 this, Callback, Promise)
 3. store (vuex 설치 및 jobsView에 actions와 mutations 적용)
@@ -15,3 +19,4 @@ Branch
 10. refactoring_5 (리팩토링 5 - async & await를 이용한 비동기 처리)
 11. modulariztion (외부 라이브러리 모듈화 방법(차트))
 12. design (컴포넌트 디자인 패턴)
+13. deploy (서비스 배포 환경 구성)
